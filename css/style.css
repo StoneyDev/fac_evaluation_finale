@@ -723,6 +723,7 @@ footer .footer-infos a {
 footer .footer-group-input {
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
 }
