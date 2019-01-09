@@ -1,28 +1,40 @@
 .container {
-  text-align: center;
-  @media all and (min-width: $tablets){
-    width: 80%;
+
+  @media all and (min-width: $mobiles) {
+    max-width: $mobiles;
+    margin: 0 auto;
+  }
+
+  @media all and (min-width: $tablets) {
+    max-width: $tablets;
+    margin: 0 auto;
+  }
+
+  @media all and (min-width: $desktops) {
+    max-width: $desktops;
     margin: 0 auto;
   }
 }
 
-.group-title {
+.col-md {
+  @media all and (min-width: $mobiles) {
+    width: 100%;
+  }
+
+  @media all and (min-width: $desktops) {
+    width: 50%;
+  }
+}
+
+.group-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 30px;
 
-  @media all and (min-width: $tablets){
-    flex-wrap: nowrap;
-    flex-direction: row;
-    width: 45%;
-    margin: 0 auto;
-    padding-top: 25px;
-  }
-
   &-logo {
-    width: 64px;
+    width: 200px;
     margin-bottom: 15px;
   }
 
@@ -53,9 +65,8 @@
   padding: 15px;
   font-weight: bold;
   border-radius: 10px;
-  margin: 0 auto;
-  text-align: center;
-  display: block;
+  justify-content: center;
+  display: inline-flex;
 }
 
 .icon-item {
@@ -79,61 +90,30 @@
   display: flex;
   flex-wrap: wrap;
 
-  @media all and (min-width: $tablets){
+  @media all and (min-width: $tablets) {
     flex-wrap: nowrap;
   }
 
-  .ci-item {
+  .col-item {
+    text-align: center;
     padding: 15px;
     width: 50%;
 
-    //p {
-    //  &:nth-child(1) {
-    //    color: $brown;
-    //  }
-    //  &:nth-child(2) {
-    //    color: $green;
-    //  }
-    //  &:nth-child(3) {
-    //    color: $orange;
-    //  }
-    //  &:nth-child(4) {
-    //    color: $blue;
-    //  }
-    //}
-    #text1 {
+    p {
       font-weight: 600;
-      color: $brown;
-    }
-
-    #text2 {
-      font-weight: 600;
-      color: $green;
-    }
-
-    #text3 {
-      font-weight: 600;
-      color: $orange;
-    }
-
-    #text4 {
-      font-weight: 600;
-      color: $blue;
     }
   }
 }
 
-.group-title-1 {
+.group-text {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 30px;
 
-  @media all and (min-width: $tablets){
+  @media all and (min-width: $tablets) {
     flex-wrap: nowrap;
-    width: 45%;
-    margin: 0 auto;
   }
 
 
@@ -142,12 +122,7 @@
   }
 
   ul {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: left;
-
     li {
-      color: inherit;
       line-height: 25px;
       margin-left: 25px;
     }
@@ -155,92 +130,61 @@
 }
 
 
-.bg-btn {
-  background: $gray;
-  padding: 2%;
-  border-radius: 10px;
-  @media all and (min-width: $tablets){
-    width: 24%;
-    margin: 0 auto;
-  }
+.container-btn {
+  display: flex;
+  justify-content: center;
 
+  .btn {
+    background: $gray;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
 
-  .infos-model {
-    color: $white;
-    text-align: unset;
-
-    svg {
-      fill: $white;
+    &-souscrire {
+      background: $orange;
     }
   }
 }
 
-
 .art {
   color: $white;
-  text-align: left;
-  padding: 10px;
-
-
-  @media all and (min-width: $tablets){
-    div {
-      display: flex;
-      flex-direction: row;
-      padding-left: 10%;
-      padding-right: 10%;
-    }
-
-    p {
-      padding-left: 25px;
-    }
-
-  }
+  padding: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   &-title {
-    padding: 10px;
-    @media all and (min-width: $tablets){
-      padding-left: 162px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-footer {
+    justify-content: flex-end;
+    font-size: 50px;
+    display: flex;
+    font-weight: bold;
+  }
+
+  @media all and (min-width: $tablets) {
+    .art-text {
+      padding-left: 25px;
     }
   }
 
   &-or {
-    margin-top: 35px;
     background: $orange;
-
-    p {
-      margin-top: 25px;
-    }
   }
 
   &-gr {
     background: $green;
-
-    p {
-      margin-top: 25px;
-    }
-  }
-
-  &-wh {
-    h2 {
-      color: $gray;
-    }
-    p {
-      color: $gray;
-      margin-top: 25px;
-    }
   }
 
   &-br {
     background: $brown-light;
-
-    h2 {
-      color: $gray;
-    }
-
-    p {
-      color: $gray;
-      margin-top: 25px;
-    }
   }
 }
 

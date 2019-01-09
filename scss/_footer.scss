@@ -1,0 +1,45 @@
+footer {
+  background: $gray;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: $white;
+
+  .footer {
+    &-infos {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      @media all and (min-width: $tablets) {
+        justify-content: space-between;
+        flex-direction: row;
+      }
+
+      a {
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &-group-input {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    &-partner {
+      display: flex;
+      flex-wrap: wrap;
+      img {
+        width: auto;
+        height: 100px;
+      }
+
+      p {
+        align-self: center;
+      }
+    }
+  }
+}

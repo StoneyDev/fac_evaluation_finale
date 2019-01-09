@@ -13,6 +13,7 @@ var gulp = require('gulp');
 
 // Include plugins
 var sass         = require('gulp-sass');
+var run          = require('gulp-run');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var notify       = require("gulp-notify");
@@ -61,6 +62,9 @@ gulp.task('css', function () {
 	.pipe(gulp.dest('./css'));
 });
 
+gulp.task('live', function() {
+	return run('browser-sync start --server --files "css/*.css", "*.html"').exec()
+});
 
 // Concatener
 gulp.task('concat_minif', function() {
